@@ -1,0 +1,21 @@
+{
+  "artifact_id": "system-map::2.0::2026-05-27",
+  "name": "SYSTEM_MAP_2_0",
+  "role": "canonical architecture contract",
+  "flow": [
+    "event_store",
+    "state_engine",
+    "snapshot",
+    "mental_model",
+    "risk_engine",
+    "governance_engine",
+    "validation_engine",
+    "execution_boundary"
+  ],
+  "rules": [
+    "event_store is the only source of truth",
+    "state is replay-derived",
+    "governance cannot bypass risk",
+    "execution boundary is final gate"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gptmeai-semascript.local/contracts/execution_approval.schema.json",
+  "title": "Execution Approval",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "approval_id",
+    "preview_id",
+    "approved",
+    "approved_by",
+    "scope",
+    "expires_at",
+    "metadata"
+  ],
+  "properties": {
+    "approval_id": {
+      "type": "string"
+    },
+    "preview_id": {
+      "type": "string"
+    },
+    "approved": {
+      "type": "boolean"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "object"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "metadata": {
+      "type": "object"
+    }
+  }
+}

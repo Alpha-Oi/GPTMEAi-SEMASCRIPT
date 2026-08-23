@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gptmeai-semascript.local/contracts/gptmeai_readonly_status_snapshot.schema.json",
+  "title": "GPTMEAi Readonly Status Snapshot",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "source",
+    "status",
+    "captured_at",
+    "health",
+    "planner",
+    "execution",
+    "metadata"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "0.2-prep"
+    },
+    "source": {
+      "type": "string",
+      "const": "gptmeai"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "ok",
+        "degraded",
+        "unavailable",
+        "unknown"
+      ]
+    },
+    "captured_at": {
+      "type": "string"
+    },
+    "health": {
+      "$ref": "#/$defs/status_section"
+    },
+    "planner": {
+      "$ref": "#/$defs/status_section"
+    },
+    "execution": {
+      "$ref": "#/$defs/status_section"
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "dry_run",
+        "read_only",
+        "live_required"
+      ],
+      "properties": {
+        "dry_run": {
+          "type": "boolean",
+          "const": true
+        },
+        "read_only": {
+          "type": "boolean",
+          "const": true
+        },
+        "live_required": {
+          "type": "boolean",
+          "const": false
+        }
+      }
+    }
+  },
+  "$defs": {
+    "status_section": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "available",
+        "top_level_keys",
+        "payload"
+      ],
+      "properties": {
+        "available": {
+          "type": "boolean"
+        },
+        "top_level_keys": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "payload": {
+          "type": "object"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "schema_version": "SEMASCRIPT_AST_SCHEMA_v0.1",
+  "source_profile": "exec",
+  "source_text": "[EXEC:OBSERVE {dry-run} <agt=[ENT:bridge]; obj=[DOC:contract]; res=[STA:preview]>]",
+  "ast": {
+    "kind": "node",
+    "class_name": "EXEC",
+    "root": "OBSERVE",
+    "modifiers": [
+      "dry-run"
+    ],
+    "roles": [
+      {
+        "name": "agt",
+        "value": {
+          "kind": "node",
+          "class_name": "ENT",
+          "root": "bridge",
+          "modifiers": [],
+          "roles": []
+        }
+      },
+      {
+        "name": "obj",
+        "value": {
+          "kind": "node",
+          "class_name": "DOC",
+          "root": "contract",
+          "modifiers": [],
+          "roles": []
+        }
+      },
+      {
+        "name": "res",
+        "value": {
+          "kind": "node",
+          "class_name": "STA",
+          "root": "preview",
+          "modifiers": [],
+          "roles": []
+        }
+      }
+    ]
+  },
+  "validation_annotations": [
+    {
+      "code": "SAMPLE",
+      "severity": "info",
+      "message": "Static compatibility fixture; no runtime execution."
+    }
+  ],
+  "metadata": {
+    "fixture": "read_only_compatibility",
+    "source_shape_observed_from": "tooling/semascript_ast.py:text_to_ast_document",
+    "contains_runtime_data": false
+  }
+}

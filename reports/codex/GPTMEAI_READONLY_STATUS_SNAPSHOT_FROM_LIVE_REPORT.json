@@ -1,0 +1,26 @@
+{
+  "captured_at": "2026-05-27T17:35:30.028869Z",
+  "execution": {
+    "available": false,
+    "payload": {},
+    "top_level_keys": []
+  },
+  "health": {
+    "available": false,
+    "payload": {},
+    "top_level_keys": []
+  },
+  "metadata": {
+    "dry_run": true,
+    "live_required": false,
+    "read_only": true
+  },
+  "planner": {
+    "available": false,
+    "payload": {},
+    "top_level_keys": []
+  },
+  "source": "gptmeai",
+  "status": "unavailable",
+  "version": "0.2-prep"
+}

@@ -1,0 +1,53 @@
+{
+  "version": "0.1",
+  "source": {
+    "system": "SEMASCRIPT",
+    "document_id": "semadoc-example-001",
+    "workspace": "example-workspace"
+  },
+  "intent": {
+    "summary": "Preview a safe documentation update plan",
+    "objective": "Map a SEMASCRIPT action document into a GPTMEAi planner preview without execution."
+  },
+  "actions": [
+    {
+      "id": "act-001",
+      "type": "analyze",
+      "description": "Inspect integration contracts for consistency",
+      "inputs": {
+        "paths": [
+          "contracts/"
+        ]
+      },
+      "expected_output": "Dry-run findings only"
+    },
+    {
+      "id": "act-002",
+      "type": "propose_patch",
+      "description": "Prepare a preview-only patch plan",
+      "inputs": {
+        "target": "docs/02_INTEGRATION_CONTRACT.md"
+      },
+      "expected_output": "Planner preview step"
+    }
+  ],
+  "constraints": {
+    "no_execution": true,
+    "allowed_roots": [
+      "TARGET_ROOT"
+    ]
+  },
+  "safety": {
+    "dry_run_only": true,
+    "requires_approval": true,
+    "forbidden_operations": [
+      "execute",
+      "mutate_gptmeai_storage",
+      "mutate_gptmeai_memory"
+    ]
+  },
+  "metadata": {
+    "created_by": "GPTMEAi-SEMASCRIPT v0.1 example",
+    "lineage_id": "example-lineage-001"
+  }
+}

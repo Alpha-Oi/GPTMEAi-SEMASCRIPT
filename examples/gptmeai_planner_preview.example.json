@@ -1,0 +1,30 @@
+{
+  "version": "0.1",
+  "preview_id": "preview-example-001",
+  "status": "preview",
+  "mapped_actions": [
+    {
+      "source_action_id": "act-001",
+      "planner_step": "Inspect integration contracts for consistency",
+      "operation": "analyze",
+      "execution_mode": "dry_run"
+    }
+  ],
+  "required_approvals": [
+    {
+      "type": "execution_approval",
+      "reason": "All GPTMEAi execution is blocked in v0.1."
+    }
+  ],
+  "risks": [
+    {
+      "level": "low",
+      "description": "Preview only; no runtime mutation is permitted."
+    }
+  ],
+  "dry_run": true,
+  "metadata": {
+    "source_system": "SEMASCRIPT",
+    "adapter": "GPTMEAi-SEMASCRIPT"
+  }
+}

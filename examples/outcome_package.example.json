@@ -1,0 +1,13 @@
+{
+  "version": "0.1",
+  "source_preview_id": "preview-example-001",
+  "status": "placeholder",
+  "dry_run": true,
+  "result": {
+    "message": "Outcome mapping is reserved for a future execution-enabled version."
+  },
+  "metadata": {
+    "source_system": "GPTMEAi",
+    "target_system": "SEMASCRIPT"
+  }
+}

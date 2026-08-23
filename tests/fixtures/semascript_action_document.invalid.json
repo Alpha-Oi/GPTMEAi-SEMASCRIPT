@@ -1,0 +1,16 @@
+{
+  "version": "0.1",
+  "source": {
+    "system": "SEMASCRIPT"
+  },
+  "intent": {
+    "summary": ""
+  },
+  "actions": [],
+  "constraints": {},
+  "safety": {
+    "dry_run_only": false,
+    "requires_approval": false
+  },
+  "metadata": {}
+}

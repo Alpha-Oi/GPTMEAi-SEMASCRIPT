@@ -1,0 +1,8 @@
+{
+  "artifact_id": "codebase-skeleton::1.0::2026-05-27",
+  "name": "CODEBASE_SKELETON",
+  "role": "first implementation-level structural artifact",
+  "repository": "gptmeai-semascript",
+  "executable_bootstrap": true,
+  "execution_boundary": "records approved actions only; no external side effects"
+}

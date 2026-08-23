@@ -1,0 +1,59 @@
+{
+  "version": "0.1",
+  "source": {
+    "system": "SEMASCRIPT",
+    "document_id": "semascript-ast-sample",
+    "source_profile": "exec"
+  },
+  "intent": {
+    "summary": "Normalize SEMASCRIPT EXEC:OBSERVE AST for dry-run preview",
+    "objective": "Verify read-only AST compatibility without enabling execution."
+  },
+  "actions": [
+    {
+      "id": "ast-root-1",
+      "type": "observe",
+      "description": "Preview SEMASCRIPT EXEC:OBSERVE AST node",
+      "inputs": {
+        "ast_class": "EXEC",
+        "ast_root": "OBSERVE",
+        "modifiers": [
+          "dry-run"
+        ],
+        "roles": {
+          "agt": "ENT:bridge",
+          "obj": "DOC:contract",
+          "res": "STA:preview"
+        }
+      },
+      "expected_output": "Dry-run planner preview only"
+    }
+  ],
+  "constraints": {
+    "no_execution": true,
+    "source_profile": "exec",
+    "source_text_present": true
+  },
+  "safety": {
+    "dry_run_only": true,
+    "requires_approval": true,
+    "forbidden_operations": [
+      "execute",
+      "mutate_gptmeai_storage",
+      "mutate_gptmeai_memory",
+      "mutate_semascript_runtime"
+    ]
+  },
+  "metadata": {
+    "normalized_from": "semascript_ast",
+    "schema_version": "SEMASCRIPT_AST_SCHEMA_v0.1",
+    "source_text": "[EXEC:OBSERVE {dry-run} <agt=[ENT:bridge]; obj=[DOC:contract]; res=[STA:preview]>]",
+    "validation_annotations": [
+      {
+        "code": "SAMPLE",
+        "severity": "info",
+        "message": "Static compatibility fixture; no runtime execution."
+      }
+    ]
+  }
+}

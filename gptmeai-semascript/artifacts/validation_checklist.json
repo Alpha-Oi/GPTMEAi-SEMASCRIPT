@@ -1,0 +1,12 @@
+{
+  "artifact_id": "validation-checklist-layer::1.0::2026-05-27",
+  "name": "VALIDATION_CHECKLIST_LAYER",
+  "checks": [
+    "architecture consistency",
+    "implementation consistency",
+    "governance consistency",
+    "evolution consistency",
+    "closed-loop consistency"
+  ],
+  "must_validate_before_execution": true
+}

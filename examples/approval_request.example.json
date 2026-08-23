@@ -1,0 +1,14 @@
+{
+  "approval_id": "approval-example-001",
+  "preview_id": "preview-example-001",
+  "approved": false,
+  "approved_by": "",
+  "scope": {
+    "mode": "dry_run_only",
+    "allowed_actions": []
+  },
+  "expires_at": "2026-12-31T23:59:59Z",
+  "metadata": {
+    "reason": "Example approval request; no execution is performed in v0.1."
+  }
+}

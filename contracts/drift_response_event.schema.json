@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GPTMEAi-SEMASCRIPT Drift Response Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "artifact_id",
+    "payload"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "DRIFT_RESPONSE_GENERATED"
+      ]
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "drift_report_id",
+        "response_type",
+        "reasoning",
+        "staged_proposal"
+      ],
+      "properties": {
+        "drift_report_id": {
+          "type": "string"
+        },
+        "response_type": {
+          "type": "string",
+          "enum": [
+            "NO_ACTION",
+            "STAGE_FIX",
+            "BLOCK_EXECUTION",
+            "ROLLBACK",
+            "REVALIDATE"
+          ]
+        },
+        "reasoning": {
+          "type": "string"
+        },
+        "staged_proposal": {
+          "type": "object"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

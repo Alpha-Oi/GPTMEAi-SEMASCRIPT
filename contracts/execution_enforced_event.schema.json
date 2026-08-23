@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GPTMEAi-SEMASCRIPT Execution Enforced Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "artifact_id",
+    "payload"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "EXECUTION_ENFORCED"
+      ]
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "action_type",
+        "source_response_id",
+        "governance_decision",
+        "risk_level",
+        "applied_changes",
+        "execution_status"
+      ],
+      "properties": {
+        "action_type": {
+          "type": "string",
+          "enum": [
+            "APPLY_FIX",
+            "ROLLBACK_STATE",
+            "REVALIDATE_SYSTEM",
+            "BLOCK_EXECUTION",
+            "NO_ACTION"
+          ]
+        },
+        "source_response_id": {
+          "type": "string"
+        },
+        "governance_decision": {
+          "type": "string"
+        },
+        "risk_level": {
+          "type": "string"
+        },
+        "applied_changes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "execution_status": {
+          "type": "string",
+          "enum": [
+            "APPROVED",
+            "REJECTED",
+            "BLOCKED"
+          ]
+        },
+        "runtime_mutation": {
+          "type": "boolean"
+        },
+        "external_execution": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

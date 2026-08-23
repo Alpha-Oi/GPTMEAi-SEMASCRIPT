@@ -1,0 +1,79 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GPTMEAi-SEMASCRIPT Live Sync Drift Event",
+  "type": "object",
+  "required": [
+    "event_id",
+    "event_type",
+    "artifact_id",
+    "payload"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "DRIFT_DETECTED",
+        "SYNC_OK"
+      ]
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "drift_status",
+        "drift_level",
+        "drift_type",
+        "affected_component",
+        "severity",
+        "timestamp",
+        "source_vs_runtime_mismatch_summary"
+      ],
+      "properties": {
+        "drift_status": {
+          "type": "string",
+          "enum": [
+            "NO_DRIFT",
+            "DRIFT_DETECTED"
+          ]
+        },
+        "drift_level": {
+          "type": "string",
+          "enum": [
+            "LOW",
+            "MEDIUM",
+            "HIGH",
+            "CRITICAL"
+          ]
+        },
+        "drift_type": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "affected_component": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "severity": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string"
+        },
+        "source_vs_runtime_mismatch_summary": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

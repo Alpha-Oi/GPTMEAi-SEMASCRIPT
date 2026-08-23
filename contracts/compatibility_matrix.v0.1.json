@@ -1,0 +1,442 @@
+{
+  "version": "0.1",
+  "scope": "dry-run",
+  "status_values": [
+    "required",
+    "supported",
+    "preserved",
+    "ignored-safe",
+    "unsupported-v0.1",
+    "planned-v0.2",
+    "unknown"
+  ],
+  "semascript_ast": {
+    "fields": [
+      {
+        "name": "version",
+        "status": "supported",
+        "source": "schema_version",
+        "handling": "preserved_as_metadata_schema_version",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py"
+        ]
+      },
+      {
+        "name": "kind/type",
+        "status": "supported",
+        "source": "ast.kind, ast.class_name, ast.root",
+        "handling": "mapped_to_intent_summary_action_type_and_action_inputs",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py"
+        ]
+      },
+      {
+        "name": "source",
+        "status": "preserved",
+        "source": "source_profile, source_text",
+        "handling": "source_profile_maps_to_source_and_constraints; source_text_maps_to_metadata",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py"
+        ]
+      },
+      {
+        "name": "intent",
+        "status": "supported",
+        "source": "intent, summary, goal, or AST class/root fallback",
+        "handling": "normalized_to_action_document_intent",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py"
+        ]
+      },
+      {
+        "name": "actions",
+        "status": "supported",
+        "source": "actions, steps, or ast root node",
+        "handling": "normalized_to_action_document_actions",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py"
+        ]
+      },
+      {
+        "name": "action id",
+        "status": "supported",
+        "source": "action.id or generated action index",
+        "handling": "preserved_or_defaulted_to_action_n",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py"
+        ]
+      },
+      {
+        "name": "action type",
+        "status": "supported",
+        "source": "action.type, action.operation, or safe EXEC root mapping",
+        "handling": "mapped_to_action_document_action_type_without_execution",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py"
+        ]
+      },
+      {
+        "name": "action target",
+        "status": "preserved",
+        "source": "AST roles such as obj/res",
+        "handling": "preserved_in_action_inputs_roles; no target execution binding",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py"
+        ]
+      },
+      {
+        "name": "action payload",
+        "status": "preserved",
+        "source": "action.inputs, ast.roles, ast.modifiers",
+        "handling": "preserved_in_action_inputs_for_preview_only",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py"
+        ]
+      },
+      {
+        "name": "constraints",
+        "status": "supported",
+        "source": "constraints or AST-derived no_execution/source profile flags",
+        "handling": "normalized_to_action_document_constraints",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py"
+        ]
+      },
+      {
+        "name": "safety",
+        "status": "required",
+        "source": "safety or adapter defaults",
+        "handling": "forces_dry_run_only_and_requires_approval_true",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py",
+          "tests/test_contracts.py"
+        ]
+      },
+      {
+        "name": "metadata",
+        "status": "preserved",
+        "source": "metadata and validation_annotations",
+        "handling": "preserved_with_normalized_from_marker",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py"
+        ]
+      },
+      {
+        "name": "graph/session references",
+        "status": "ignored-safe",
+        "source": "not consumed by v0.1 bridge",
+        "handling": "may be preserved in metadata or inputs but not interpreted",
+        "test_coverage": [
+          "docs/05_CONTRACT_COMPATIBILITY_MATRIX.md"
+        ]
+      },
+      {
+        "name": "state references",
+        "status": "ignored-safe",
+        "source": "not consumed by v0.1 bridge",
+        "handling": "may be preserved but never dereferenced or mutated",
+        "test_coverage": [
+          "docs/05_CONTRACT_COMPATIBILITY_MATRIX.md"
+        ]
+      },
+      {
+        "name": "lineage references",
+        "status": "ignored-safe",
+        "source": "not consumed by v0.1 bridge",
+        "handling": "may be preserved but never written",
+        "test_coverage": [
+          "docs/05_CONTRACT_COMPATIBILITY_MATRIX.md"
+        ]
+      },
+      {
+        "name": "execution/runtime fields",
+        "status": "unsupported-v0.1",
+        "source": "runtime execution fields",
+        "handling": "not executed; represented only as dry-run risks or forbidden operations",
+        "test_coverage": [
+          "tests/test_compatibility_fixtures.py",
+          "tests/test_contract_compatibility_matrix.py"
+        ]
+      }
+    ]
+  },
+  "semascript_action_document": {
+    "fields": [
+      {
+        "name": "version",
+        "status": "required",
+        "required": true,
+        "validation": "must be a non-empty string",
+        "mapping": "not copied into planner preview except preview uses bridge version 0.1",
+        "failure": "validation error"
+      },
+      {
+        "name": "source",
+        "status": "required",
+        "required": true,
+        "validation": "must be an object with source.system equal to SEMASCRIPT",
+        "mapping": "source.system and source.document_id map into planner preview metadata",
+        "failure": "validation error"
+      },
+      {
+        "name": "intent",
+        "status": "required",
+        "required": true,
+        "validation": "must be an object with non-empty intent.summary",
+        "mapping": "intent.summary maps into planner preview metadata.intent_summary",
+        "failure": "validation error"
+      },
+      {
+        "name": "actions[]",
+        "status": "required",
+        "required": true,
+        "validation": "must be a non-empty array; each action requires id, type, and description",
+        "mapping": "each action maps into mapped_actions[] with dry_run execution_mode",
+        "failure": "validation error"
+      },
+      {
+        "name": "constraints",
+        "status": "required",
+        "required": true,
+        "validation": "must be an object",
+        "mapping": "validated for shape but not mapped into planner preview fields in v0.1",
+        "failure": "validation error"
+      },
+      {
+        "name": "safety",
+        "status": "required",
+        "required": true,
+        "validation": "must be an object; dry_run_only and requires_approval must be true",
+        "mapping": "enforced by validator and approval gate behavior",
+        "failure": "validation error"
+      },
+      {
+        "name": "metadata",
+        "status": "required",
+        "required": true,
+        "validation": "must be an object",
+        "mapping": "used as source metadata only when adapter code explicitly reads keys",
+        "failure": "validation error"
+      }
+    ]
+  },
+  "gptmeai_status_samples": {
+    "health": {
+      "endpoint": "/health",
+      "fields": [
+        {"name": "status", "status": "supported", "handling": "static fixture expects ok"},
+        {"name": "service", "status": "supported", "handling": "static fixture expects AI OS API"},
+        {"name": "planner_active", "status": "supported", "handling": "presence checked by fixture tests"},
+        {"name": "execution_failed", "status": "supported", "handling": "presence checked by fixture tests"},
+        {"name": "memory_count", "status": "preserved", "handling": "sample field only; never mutated"}
+      ]
+    },
+    "planner_status": {
+      "endpoint": "/planner/status",
+      "fields": [
+        {"name": "status", "status": "supported", "handling": "static fixture expects ok"},
+        {"name": "service", "status": "supported", "handling": "static fixture identifies planner runtime"},
+        {"name": "plan_counts", "status": "supported", "handling": "presence checked by fixture tests"},
+        {"name": "step_counts", "status": "supported", "handling": "presence checked by fixture tests"},
+        {"name": "plans", "status": "supported", "handling": "presence checked by fixture tests"},
+        {"name": "events", "status": "preserved", "handling": "sample field only; not consumed by bridge mapper"}
+      ]
+    },
+    "execution_status": {
+      "endpoint": "/execution/status",
+      "fields": [
+        {"name": "status", "status": "supported", "handling": "static fixture expects ok"},
+        {"name": "service", "status": "supported", "handling": "static fixture identifies execution runtime status"},
+        {"name": "operation_counts", "status": "supported", "handling": "presence checked by fixture tests"},
+        {"name": "compensation_counts", "status": "supported", "handling": "presence checked by fixture tests"},
+        {"name": "operations", "status": "supported", "handling": "presence checked by fixture tests as read-only sample"},
+        {"name": "lineage", "status": "preserved", "handling": "sample field only; never written by bridge"}
+      ]
+    }
+  },
+  "planner_preview": {
+    "fields": [
+      {
+        "name": "version",
+        "status": "required",
+        "mapping": "bridge planner preview contract version; currently 0.1"
+      },
+      {
+        "name": "preview_id",
+        "status": "supported",
+        "mapping": "generated with preview-UUID"
+      },
+      {
+        "name": "status",
+        "status": "supported",
+        "mapping": "always preview for successful v0.1 mapping"
+      },
+      {
+        "name": "mapped_actions[]",
+        "status": "supported",
+        "mapping": "actions[].id/type/description/inputs/expected_output map to source_action_id/operation/planner_step/inputs/expected_output"
+      },
+      {
+        "name": "required_approvals[]",
+        "status": "required",
+        "mapping": "always contains execution_approval requirement"
+      },
+      {
+        "name": "risks[]",
+        "status": "supported",
+        "mapping": "always includes dry-run risk; risky action types add medium risk"
+      },
+      {
+        "name": "dry_run",
+        "status": "required",
+        "mapping": "always true"
+      },
+      {
+        "name": "metadata",
+        "status": "supported",
+        "mapping": "adapter name, timestamps, source system/document id, intent summary, action count, config flags, validation warnings"
+      }
+    ]
+  },
+  "execution_approval": {
+    "fields": [
+      {
+        "name": "approval_id",
+        "status": "planned-v0.2",
+        "handling": "tracked as local approval object identity; does not enable execution"
+      },
+      {
+        "name": "preview_id",
+        "status": "supported",
+        "handling": "references the planner preview under review"
+      },
+      {
+        "name": "approved",
+        "status": "planned-v0.2",
+        "handling": "approval records are local object logic only in v0.1"
+      },
+      {
+        "name": "approved_by",
+        "status": "planned-v0.2",
+        "handling": "tracked for future approval handoff design"
+      },
+      {
+        "name": "scope",
+        "status": "planned-v0.2",
+        "handling": "tracked for future bounded approval scope"
+      },
+      {
+        "name": "expires_at",
+        "status": "planned-v0.2",
+        "handling": "tracked for future approval expiry"
+      },
+      {
+        "name": "metadata",
+        "status": "preserved",
+        "handling": "local approval metadata only; no execution side effect"
+      }
+    ]
+  },
+  "adapter_error_model": {
+    "fields": [
+      {
+        "name": "error_code",
+        "status": "supported",
+        "handling": "stable machine-readable error identifier"
+      },
+      {
+        "name": "message",
+        "status": "supported",
+        "handling": "human-readable validation or adapter message"
+      },
+      {
+        "name": "severity",
+        "status": "supported",
+        "handling": "info, warning, error, or critical"
+      },
+      {
+        "name": "source",
+        "status": "supported",
+        "handling": "originating bridge component or contract surface"
+      },
+      {
+        "name": "retryable",
+        "status": "supported",
+        "handling": "indicates whether retry is safe"
+      },
+      {
+        "name": "details",
+        "status": "preserved",
+        "handling": "structured details object; must not contain secrets"
+      }
+    ]
+  },
+  "gptmeai_readonly_status_snapshot": {
+    "scope": "v0.2-prep",
+    "mode": "read-only",
+    "required_for_v0_1_local_verification": false,
+    "fields": [
+      {
+        "name": "version",
+        "status": "planned-v0.2",
+        "handling": "snapshot contract version; currently 0.2-prep"
+      },
+      {
+        "name": "source",
+        "status": "planned-v0.2",
+        "handling": "constant gptmeai source marker"
+      },
+      {
+        "name": "status",
+        "status": "planned-v0.2",
+        "handling": "ok, degraded, unavailable, or unknown based on read-only section availability"
+      },
+      {
+        "name": "captured_at",
+        "status": "planned-v0.2",
+        "handling": "ISO-style capture timestamp or deterministic fixture timestamp"
+      },
+      {
+        "name": "health",
+        "status": "planned-v0.2",
+        "handling": "read-only /health payload summary"
+      },
+      {
+        "name": "planner",
+        "status": "planned-v0.2",
+        "handling": "read-only /planner/status payload summary"
+      },
+      {
+        "name": "execution",
+        "status": "planned-v0.2",
+        "handling": "read-only /execution/status payload summary; does not enable execution"
+      },
+      {
+        "name": "metadata",
+        "status": "planned-v0.2",
+        "handling": "dry_run, read_only, and live_required false safety flags"
+      }
+    ]
+  },
+  "unsupported_v0_1": [
+    {"name": "real execution", "status": "unsupported-v0.1", "reason": "v0.1 produces preview only"},
+    {"name": "memory mutation", "status": "unsupported-v0.1", "reason": "GPTMEAi and SEMASCRIPT memory must not be mutated"},
+    {"name": "storage mutation", "status": "unsupported-v0.1", "reason": "storage is protected and read-only for this bridge"},
+    {"name": "ledger mutation", "status": "unsupported-v0.1", "reason": "execution ledger writes are outside v0.1 scope"},
+    {"name": "runtime mutation", "status": "unsupported-v0.1", "reason": "no live runtime mutation or startup is required"},
+    {"name": "live GPTMEAi availability requirement", "status": "unsupported-v0.1", "reason": "local verification passes when GPTMEAi health is unavailable"},
+    {"name": "UI merge", "status": "unsupported-v0.1", "reason": "GPTMEAi and SEMASCRIPT UIs remain separate"},
+    {"name": "dependency installation", "status": "unsupported-v0.1", "reason": "v0.1 uses standard library only"}
+  ],
+  "verification": {
+    "preferred_command": "python -B tools\\run_local_verification.py",
+    "test_coverage": [
+      "tests/test_contract_compatibility_matrix.py",
+      "tests/test_compatibility_fixtures.py",
+      "tests/test_contracts.py",
+      "tests/test_dry_run_adapter.py",
+      "tests/test_local_verification_wrapper.py",
+      "tests/test_root_cleanliness.py"
+    ]
+  }
+}

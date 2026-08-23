@@ -1,0 +1,27 @@
+{
+  "version": "0.1",
+  "source": {
+    "system": "SEMASCRIPT",
+    "document_id": "fixture-valid-001"
+  },
+  "intent": {
+    "summary": "Validate a dry-run action document"
+  },
+  "actions": [
+    {
+      "id": "action-1",
+      "type": "inspect",
+      "description": "Inspect files without mutation"
+    }
+  ],
+  "constraints": {
+    "no_execution": true
+  },
+  "safety": {
+    "dry_run_only": true,
+    "requires_approval": true
+  },
+  "metadata": {
+    "fixture": true
+  }
+}

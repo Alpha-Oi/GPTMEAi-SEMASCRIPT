@@ -1,0 +1,96 @@
+# GPTMEAi Selected Files
+
+- Generated: `2026-06-06T20:03:12.837547Z`
+- Source root: `D:\Development GPTMEAi`
+- Mode: read-only path reference; no source files copied.
+
+## Selected References
+
+- `README.md`
+  - Type: file
+  - Absolute path: `D:\Development GPTMEAi\README.md`
+  - Size bytes: 13190
+- `AGENTS.md`
+  - Type: file
+  - Absolute path: `D:\Development GPTMEAi\AGENTS.md`
+  - Size bytes: 6476
+- `run_ai_os.py`
+  - Type: file
+  - Absolute path: `D:\Development GPTMEAi\run_ai_os.py`
+  - Size bytes: 129
+- `scripts/api_server.py`
+  - Type: file
+  - Absolute path: `D:\Development GPTMEAi\scripts\api_server.py`
+  - Size bytes: 42292
+- `ai_os`
+  - Type: directory
+  - Absolute path: `D:\Development GPTMEAi\ai_os`
+  - Selected children:
+  - `ai_os/agent_runtime.py`
+  - `ai_os/cognitive_loop.py`
+  - `ai_os/cognitive_loop_compat.py`
+  - `ai_os/concept_core.py`
+  - `ai_os/config.py`
+  - `ai_os/manifest.py`
+  - `ai_os/memory_pipeline.py`
+  - `ai_os/role_policy.py`
+  - `ai_os/runtime.py`
+  - `ai_os/semantic_mesh.py`
+  - `ai_os/stabilization_playbook.py`
+  - `ai_os/__init__.py`
+  - `ai_os/__main__.py`
+- `planning`
+  - Type: directory
+  - Absolute path: `D:\Development GPTMEAi\planning`
+  - Selected children:
+  - `planning/runtime.py`
+  - `planning/__init__.py`
+- `execution`
+  - Type: directory
+  - Absolute path: `D:\Development GPTMEAi\execution`
+  - Selected children:
+  - `execution/contracts.py`
+  - `execution/ledger.py`
+  - `execution/runtime.py`
+  - `execution/snapshots.py`
+  - `execution/__init__.py`
+- `core`
+  - Type: directory
+  - Absolute path: `D:\Development GPTMEAi\core`
+  - Selected children:
+  - `core/ai_kernel.py`
+  - `core/cognitive_loop.py`
+  - `core/cognitive_loop_api.py`
+  - `core/cognitive_loop_api_v2.py`
+  - `core/cognitive_loop_auto_scale.py`
+  - `core/cognitive_loop_live.py`
+  - `core/cognitive_loop_live_v2.py`
+  - `core/graph_engine.py`
+  - `core/importance_engine.py`
+  - `core/memory_engine.py`
+  - `core/retrieval_engine.py`
+  - `core/storage_engine.py`
+  - `core/supervisor_bridge.py`
+  - `core/tag_engine.py`
+  - `core/temporal_engine.py`
+  - `core/__init__.py`
+- `docs/developer`
+  - Type: directory
+  - Absolute path: `D:\Development GPTMEAi\docs\developer`
+  - Selected children:
+  - `docs/developer/AI_OS_META_PRINCIPLES_ENGINEERING_SPEC.md`
+  - `docs/developer/DEVELOPER_CONTEXT.md`
+  - `docs/developer/GPTMEAI_100_STEP_CURRENT_STATE_OVERLAY.md`
+  - `docs/developer/GPTMEAI_CONCEPT_CORE.md`
+  - `docs/developer/GPTMEAI_SEMANTIC_MESH.md`
+- `AI_OS_DEVELOPMENT_INVARIANTS.md`
+  - Type: file
+  - Absolute path: `D:\Development GPTMEAi\AI_OS_DEVELOPMENT_INVARIANTS.md`
+  - Size bytes: 9068
+- `AI_OS_LAYER_TECHNICAL_SPEC.md`
+  - Type: file
+  - Absolute path: `D:\Development GPTMEAi\AI_OS_LAYER_TECHNICAL_SPEC.md`
+  - Size bytes: 20954
+
+## Missing / Not Found
+

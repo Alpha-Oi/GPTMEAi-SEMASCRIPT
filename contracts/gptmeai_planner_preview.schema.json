@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gptmeai-semascript.local/contracts/gptmeai_planner_preview.schema.json",
+  "title": "GPTMEAi Planner Preview",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "preview_id",
+    "status",
+    "mapped_actions",
+    "required_approvals",
+    "risks",
+    "dry_run",
+    "metadata"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "preview_id": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "preview",
+        "rejected"
+      ]
+    },
+    "mapped_actions": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "required_approvals": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "risks": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "dry_run": {
+      "type": "boolean",
+      "const": true
+    },
+    "metadata": {
+      "type": "object"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "version": "0.1",
+  "status": "preview",
+  "dry_run": true,
+  "required_approvals_min": 1,
+  "mapped_actions": [
+    {
+      "source_action_id": "ast-root-1",
+      "operation": "observe",
+      "planner_step_contains": "EXEC:OBSERVE",
+      "execution_mode": "dry_run"
+    }
+  ],
+  "metadata": {
+    "source_system": "SEMASCRIPT",
+    "source_document_id": "semascript-ast-sample",
+    "action_count": 1,
+    "config_dry_run": true,
+    "config_requires_approval": true
+  }
+}

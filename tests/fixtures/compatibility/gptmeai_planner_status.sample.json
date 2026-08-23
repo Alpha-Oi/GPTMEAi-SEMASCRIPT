@@ -1,0 +1,44 @@
+{
+  "status": "ok",
+  "service": "AI OS Planner Runtime",
+  "state_file": "REDACTED_READ_ONLY_SAMPLE",
+  "plan_counts": {
+    "total": 0,
+    "active": 0,
+    "completed": 0,
+    "failed": 0
+  },
+  "plan_kind_counts": {},
+  "step_counts": {
+    "total": 0,
+    "planned": 0,
+    "blocked": 0,
+    "queued": 0,
+    "in_progress": 0,
+    "completed": 0,
+    "failed": 0
+  },
+  "recovery_counts": {
+    "total": 0,
+    "remediation_blocked": 0,
+    "remediation_required": 0,
+    "healthy": 0,
+    "observe": 0,
+    "degraded": 0,
+    "recovering": 0,
+    "blocked": 0
+  },
+  "branch_health_counts": {
+    "total": 0,
+    "open": 0,
+    "guarded": 0,
+    "restricted": 0,
+    "blocked": 0
+  },
+  "playbook_counts": {},
+  "active_focus": [],
+  "branch_health": [],
+  "recovery_workflows": [],
+  "plans": [],
+  "events": []
+}

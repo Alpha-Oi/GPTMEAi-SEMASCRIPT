@@ -1,0 +1,204 @@
+{
+  "version": "0.2-prep",
+  "source": "gptmeai",
+  "status": "ok",
+  "captured_at": "2026-05-02T00:00:00Z",
+  "health": {
+    "available": true,
+    "top_level_keys": [
+      "agents_total",
+      "cognitive_cycles",
+      "cognitive_loop_running",
+      "execution_failed",
+      "execution_pending_compensation",
+      "execution_recovery_in_progress",
+      "memory_count",
+      "planner_active",
+      "planner_blocked_steps",
+      "planner_branch_blocked",
+      "planner_branch_declining",
+      "planner_branch_guarded",
+      "planner_branch_pressure_critical",
+      "planner_branch_pressure_high",
+      "planner_branch_pressure_medium",
+      "planner_branch_restricted",
+      "planner_dispatch_blocked",
+      "planner_dispatch_guarded",
+      "planner_dispatch_restricted",
+      "planner_playbooks_reuse_ready",
+      "planner_playbooks_strong",
+      "planner_playbooks_total",
+      "planner_playbooks_usable",
+      "planner_recovery_blocked",
+      "planner_recovery_degraded",
+      "planner_recovery_healthy",
+      "planner_recovery_observe",
+      "planner_recovery_remediation_blocked",
+      "planner_recovery_workflows",
+      "planner_remediation_plans",
+      "service",
+      "status",
+      "tasks_queued"
+    ],
+    "payload": {
+      "status": "ok",
+      "service": "AI OS API",
+      "memory_count": 0,
+      "agents_total": 0,
+      "tasks_queued": 0,
+      "cognitive_loop_running": false,
+      "cognitive_cycles": 0,
+      "planner_active": 0,
+      "planner_blocked_steps": 0,
+      "planner_remediation_plans": 0,
+      "planner_recovery_workflows": 0,
+      "planner_recovery_remediation_blocked": 0,
+      "planner_recovery_healthy": 0,
+      "planner_recovery_observe": 0,
+      "planner_recovery_degraded": 0,
+      "planner_recovery_blocked": 0,
+      "planner_branch_guarded": 0,
+      "planner_branch_restricted": 0,
+      "planner_branch_blocked": 0,
+      "planner_dispatch_guarded": 0,
+      "planner_dispatch_restricted": 0,
+      "planner_dispatch_blocked": 0,
+      "planner_branch_declining": 0,
+      "planner_branch_pressure_medium": 0,
+      "planner_branch_pressure_high": 0,
+      "planner_branch_pressure_critical": 0,
+      "planner_playbooks_total": 0,
+      "planner_playbooks_strong": 0,
+      "planner_playbooks_usable": 0,
+      "planner_playbooks_reuse_ready": 0,
+      "execution_failed": 0,
+      "execution_pending_compensation": 0,
+      "execution_recovery_in_progress": 0
+    }
+  },
+  "planner": {
+    "available": true,
+    "top_level_keys": [
+      "active_focus",
+      "branch_health",
+      "branch_health_counts",
+      "events",
+      "plan_counts",
+      "plan_kind_counts",
+      "plans",
+      "playbook_counts",
+      "recovery_counts",
+      "recovery_workflows",
+      "service",
+      "state_file",
+      "status",
+      "step_counts"
+    ],
+    "payload": {
+      "status": "ok",
+      "service": "AI OS Planner Runtime",
+      "state_file": "REDACTED_READ_ONLY_SAMPLE",
+      "plan_counts": {
+        "total": 0,
+        "active": 0,
+        "completed": 0,
+        "failed": 0
+      },
+      "plan_kind_counts": {},
+      "step_counts": {
+        "total": 0,
+        "planned": 0,
+        "blocked": 0,
+        "queued": 0,
+        "in_progress": 0,
+        "completed": 0,
+        "failed": 0
+      },
+      "recovery_counts": {
+        "total": 0,
+        "remediation_blocked": 0,
+        "remediation_required": 0,
+        "healthy": 0,
+        "observe": 0,
+        "degraded": 0,
+        "recovering": 0,
+        "blocked": 0
+      },
+      "branch_health_counts": {
+        "total": 0,
+        "open": 0,
+        "guarded": 0,
+        "restricted": 0,
+        "blocked": 0
+      },
+      "playbook_counts": {},
+      "active_focus": [],
+      "branch_health": [],
+      "recovery_workflows": [],
+      "plans": [],
+      "events": []
+    }
+  },
+  "execution": {
+    "available": true,
+    "top_level_keys": [
+      "compensation_counts",
+      "events",
+      "feedback",
+      "lineage",
+      "operation_counts",
+      "operations",
+      "recovery_compensation_counts",
+      "recovery_operation_counts",
+      "service",
+      "state_file",
+      "status"
+    ],
+    "payload": {
+      "status": "ok",
+      "service": "AI OS Execution Runtime",
+      "state_file": "REDACTED_READ_ONLY_SAMPLE",
+      "operation_counts": {
+        "total": 0,
+        "planned": 0,
+        "in_progress": 0,
+        "committed": 0,
+        "failed": 0
+      },
+      "compensation_counts": {
+        "ready": 0,
+        "available": 0,
+        "pending": 0,
+        "completed": 0,
+        "not_required": 0
+      },
+      "feedback": {
+        "total": 0,
+        "recent": []
+      },
+      "recovery_operation_counts": {
+        "total": 0,
+        "in_progress": 0,
+        "committed": 0,
+        "failed": 0
+      },
+      "recovery_compensation_counts": {
+        "pending": 0,
+        "available": 0,
+        "completed": 0,
+        "not_required": 0
+      },
+      "operations": [],
+      "events": [],
+      "lineage": {
+        "total": 0,
+        "recent": []
+      }
+    }
+  },
+  "metadata": {
+    "dry_run": true,
+    "read_only": true,
+    "live_required": false
+  }
+}

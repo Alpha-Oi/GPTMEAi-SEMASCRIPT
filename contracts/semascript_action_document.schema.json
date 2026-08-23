@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gptmeai-semascript.local/contracts/semascript_action_document.schema.json",
+  "title": "SEMASCRIPT Action Document",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version",
+    "source",
+    "intent",
+    "actions",
+    "constraints",
+    "safety",
+    "metadata"
+  ],
+  "properties": {
+    "version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "system"
+      ],
+      "properties": {
+        "system": {
+          "type": "string",
+          "const": "SEMASCRIPT"
+        },
+        "document_id": {
+          "type": "string"
+        },
+        "workspace": {
+          "type": "string"
+        }
+      }
+    },
+    "intent": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "summary"
+      ],
+      "properties": {
+        "summary": {
+          "type": "string",
+          "minLength": 1
+        },
+        "objective": {
+          "type": "string"
+        }
+      }
+    },
+    "actions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": [
+          "id",
+          "type",
+          "description"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "inputs": {
+            "type": "object"
+          },
+          "expected_output": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "safety": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "dry_run_only",
+        "requires_approval"
+      ],
+      "properties": {
+        "dry_run_only": {
+          "type": "boolean"
+        },
+        "requires_approval": {
+          "type": "boolean"
+        },
+        "forbidden_operations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "metadata": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

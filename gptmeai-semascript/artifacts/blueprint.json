@@ -1,0 +1,24 @@
+{
+  "artifact_id": "system-engineering-blueprint-mode::1.0::2026-05-27",
+  "name": "SYSTEM_ENGINEERING_BLUEPRINT_MODE",
+  "role": "implementation decomposition layer",
+  "modules": {
+    "core": [
+      "event_store",
+      "state_engine",
+      "governance",
+      "risk_engine",
+      "evolution_engine",
+      "validation_engine",
+      "execution_boundary"
+    ],
+    "runtime": [
+      "orchestrator",
+      "loop_runner"
+    ],
+    "bridge": [
+      "semascript_bridge"
+    ]
+  },
+  "non_executable_reference": true
+}

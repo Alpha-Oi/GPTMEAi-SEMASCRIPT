@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "service": "AI OS Execution Runtime",
+  "state_file": "REDACTED_READ_ONLY_SAMPLE",
+  "operation_counts": {
+    "total": 0,
+    "planned": 0,
+    "in_progress": 0,
+    "committed": 0,
+    "failed": 0
+  },
+  "compensation_counts": {
+    "ready": 0,
+    "available": 0,
+    "pending": 0,
+    "completed": 0,
+    "not_required": 0
+  },
+  "feedback": {
+    "total": 0,
+    "recent": []
+  },
+  "recovery_operation_counts": {
+    "total": 0,
+    "in_progress": 0,
+    "committed": 0,
+    "failed": 0
+  },
+  "recovery_compensation_counts": {
+    "pending": 0,
+    "available": 0,
+    "completed": 0,
+    "not_required": 0
+  },
+  "operations": [],
+  "events": [],
+  "lineage": {
+    "total": 0,
+    "recent": []
+  }
+}

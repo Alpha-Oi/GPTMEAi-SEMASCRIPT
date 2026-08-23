@@ -1,0 +1,130 @@
+{
+  "contract_id": "STAGE4_PREVIEW_HANDOFF",
+  "name": "Stage 4 Preview Handoff Contract",
+  "version": "0.1",
+  "status": "draft/design-only",
+  "purpose": "Define a dry-run, preview-only, non-mutating envelope for handing a validated SEMASCRIPT action document to a GPTMEAi planner preview review boundary.",
+  "mode_flags": {
+    "dry_run": true,
+    "preview_only": true,
+    "execution_allowed": false,
+    "mutation_allowed": false,
+    "requires_human_approval": true
+  },
+  "input_boundary": {
+    "semascript_action_document_ref": "contracts/semascript_action_document.schema.json",
+    "normalized_action_document_representation": {
+      "description": "Validation-friendly canonical SEMASCRIPT action document representation produced before any GPTMEAi planner preview handoff.",
+      "required_fields": [
+        "version",
+        "source",
+        "intent",
+        "actions",
+        "constraints",
+        "safety",
+        "metadata"
+      ]
+    },
+    "source_evidence_references": [
+      "source_references/GPTMEAi_SELECTED_FILES.md",
+      "source_references/SEMASCRIPT_SELECTED_FILES.md",
+      "source_references/MANIFEST.md"
+    ]
+  },
+  "output_boundary": {
+    "gptmeai_planner_preview_handoff_object": {
+      "description": "Preview handoff envelope referencing the existing GPTMEAi planner preview contract without invoking GPTMEAi execution.",
+      "contract_ref": "contracts/gptmeai_planner_preview.schema.json"
+    },
+    "approval_gate_result": {
+      "description": "Local approval gate result required before any future execution-enabled work.",
+      "contract_ref": "contracts/execution_approval.schema.json",
+      "enables_execution": false
+    },
+    "validation_normalization_diagnostics": {
+      "description": "Non-mutating diagnostics from validation and normalization.",
+      "allowed_levels": [
+        "info",
+        "warning",
+        "error"
+      ]
+    }
+  },
+  "validation_stages": [
+    {
+      "id": "validate_semascript_action_document",
+      "description": "Validate the SEMASCRIPT action document against existing v0.1 manual and contract rules.",
+      "mutation_allowed": false
+    },
+    {
+      "id": "normalize_action_document",
+      "description": "Normalize the action document into the canonical representation used for preview mapping.",
+      "mutation_allowed": false
+    },
+    {
+      "id": "build_planner_preview_handoff",
+      "description": "Build the planner preview handoff envelope from existing preview-only mapping semantics.",
+      "mutation_allowed": false
+    },
+    {
+      "id": "stop_at_approval_gate",
+      "description": "Stop at the approval gate and do not call GPTMEAi execution, dispatch, storage, memory, ledger, or runtime mutation paths.",
+      "mutation_allowed": false
+    }
+  ],
+  "mutation_boundaries": [
+    "no GPTMEAi source mutation",
+    "no SEMASCRIPT source mutation",
+    "no runtime mutation",
+    "no storage mutation",
+    "no memory mutation",
+    "no session mutation",
+    "no workspace mutation",
+    "no lineage mutation",
+    "no ledger mutation"
+  ],
+  "explicit_non_goals": [
+    "no execute method",
+    "no dispatch",
+    "no live runtime startup",
+    "no planner execution",
+    "no api runtime behavior change",
+    "no schema data migration",
+    "no dependency work"
+  ],
+  "required_source_evidence": [
+    "AGENTS.md",
+    "docs/10_STAGE4_FUNCTIONAL_INTEGRATION_DESIGN.md",
+    "contracts/semascript_action_document.schema.json",
+    "contracts/gptmeai_planner_preview.schema.json",
+    "contracts/execution_approval.schema.json",
+    "contracts/compatibility_matrix.v0.1.json",
+    "source_references/GPTMEAi_SELECTED_FILES.md",
+    "source_references/SEMASCRIPT_SELECTED_FILES.md",
+    "source_references/MANIFEST.md",
+    "bridge/",
+    "adapters/"
+  ],
+  "approval_gates": {
+    "human_approval_required": true,
+    "approval_scope": "preview-handoff-review-only",
+    "approval_effect": "Approval may confirm review of the handoff envelope but does not enable execution.",
+    "denial_effect": "Denied approval returns a non-mutating outcome and stops the handoff."
+  },
+  "rollback_plan": {
+    "strategy": "Remove this contract draft and its focused guard test.",
+    "files": [
+      "contracts/stage4_preview_handoff_contract.v0.1.json",
+      "tests/test_stage4_preview_handoff_contract.py"
+    ],
+    "runtime_rollback_required": false,
+    "data_migration_rollback_required": false
+  },
+  "verification_gates": [
+    "python -B -m py_compile tests\\test_stage4_preview_handoff_contract.py",
+    "python -B -m unittest tests.test_stage4_preview_handoff_contract",
+    "python -B -m unittest discover -s tests",
+    "python -B tools\\run_local_verification.py",
+    "python -B tools\\check_root_cleanliness.py"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "system": "GPTMEAi-SEMASCRIPT",
+  "version": "bootstrap-1.0",
+  "source_of_truth": "event_store",
+  "artifacts": [
+    {
+      "artifact_id": "system-map::2.0::2026-05-27",
+      "type": "architecture_contract",
+      "path": "artifacts/system_map_2_0.json",
+      "state": "REFERENCE"
+    },
+    {
+      "artifact_id": "validation-checklist-layer::1.0::2026-05-27",
+      "type": "system_consistency_contract_layer",
+      "path": "artifacts/validation_checklist.json",
+      "state": "REFERENCE"
+    },
+    {
+      "artifact_id": "system-engineering-blueprint-mode::1.0::2026-05-27",
+      "type": "system_decomposition_mode",
+      "path": "artifacts/blueprint.json",
+      "state": "REFERENCE"
+    },
+    {
+      "artifact_id": "codebase-skeleton::1.0::2026-05-27",
+      "type": "implementation_root_skeleton",
+      "path": "artifacts/codebase_skeleton.json",
+      "state": "REFERENCE"
+    }
+  ],
+  "constraints": {
+    "deterministic": true,
+    "no_external_dependencies": true,
+    "event_store_only_source_of_truth": true,
+    "execution_boundary_required": true
+  }
+}

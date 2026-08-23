@@ -1,0 +1,99 @@
+# SEMASCRIPT Selected Files
+
+- Generated: `2026-06-06T20:03:12.846567Z`
+- Source root: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle`
+- Mode: read-only path reference; no source files copied.
+
+## Selected References
+
+- `README.md`
+  - Type: file
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\README.md`
+  - Size bytes: 2696
+- `AGENTS.md`
+  - Type: file
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\AGENTS.md`
+  - Size bytes: 3330
+- `docs`
+  - Type: directory
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\docs`
+  - Selected children:
+  - `docs/00_PROJECT_IDENTITY.md`
+  - `docs/01_ARCHITECTURE_MAP.md`
+  - `docs/02_CURRENT_STATUS.md`
+  - `docs/03_ROADMAP.md`
+  - `docs/04_SCOPE_V0_1.md`
+  - `docs/README.md`
+  - `docs/SEMASCRIPT_0_SEMANTIC_BASELINE.md`
+  - `docs/SEMASCRIPT_AST_INTEGRATION_PACK_v0.1.md`
+  - `docs/SEMASCRIPT_BATCH_RUNTIME_STATE_CORPUS_v0.1.md`
+  - `docs/SEMASCRIPT_BRANCHING_NAMED_MERGE_LINEAGE_GRAPH_v0.1.md`
+  - `docs/SEMASCRIPT_BRANCH_REBASE_REPLAY_TARGET_LINEAGE_v0.1.md`
+  - `docs/SEMASCRIPT_CHERRY_PICK_SELECTIVE_SESSION_REPLAY_ACROSS_BRANCHES_v0.1.md`
+  - `docs/SEMASCRIPT_CORE_SPEC_v0.1.md`
+  - `docs/SEMASCRIPT_CORPUS_PIPELINE_v0.1.md`
+  - `docs/SEMASCRIPT_CROSS_SESSION_COMPARE_DIFF_MODE_v0.1.md`
+  - `docs/SEMASCRIPT_EDITABLE_VISUAL_GRAPH_MODE_v0.1.md`
+  - `docs/SEMASCRIPT_EDITOR_VISUAL_INSPECTOR_SPEC_v0.1.md`
+  - `docs/SEMASCRIPT_ENV_BOOTSTRAP_AND_VERIFICATION_v0.2.md`
+  - `docs/SEMASCRIPT_EXEC_PROFILE_v0.1.md`
+  - `docs/SEMASCRIPT_EXEC_RUNTIME_RULES_v0.1.md`
+  - `docs/SEMASCRIPT_GLYPH_ARCHITECTURE_v0.1.md`
+  - `docs/SEMASCRIPT_GRAMMAR_EXPANSION_v0.1.md`
+  - `docs/SEMASCRIPT_HARDENING_REGRESSION_SUITE_v0.2.md`
+  - `docs/SEMASCRIPT_HUMAN_NORMALIZER_MVP_v0.1.md`
+  - `docs/SEMASCRIPT_HUMAN_PROFILE_v0.1.md`
+  - `docs/SEMASCRIPT_IMPLEMENTATION_PLAN_v0.1.md`
+  - `docs/SEMASCRIPT_INTERACTIVE_CONFLICT_RESOLUTION_MANUAL_MERGE_DECISIONS_v0.1.md`
+  - `docs/SEMASCRIPT_LOCAL_OUTCOME_SET_DIFF_COMPARE_BETWEEN_IMPORTED_PROMOTED_RESOLUTIONS_v0.1.md`
+  - `docs/SEMASCRIPT_LOCAL_OUTCOME_SET_EXPORT_IMPORT_AS_PORTABLE_LOCAL_PROMOTED_RESOLUTION_PACKAGE_v0.1.md`
+  - `docs/SEMASCRIPT_MANIFEST_v0.1.md`
+  - `docs/SEMASCRIPT_MERGE_COMMIT_RESOLVED_SESSION_INSERTION_v0.1.md`
+  - `docs/SEMASCRIPT_MULTI_SESSION_PROJECT_WORKSPACE_v0.1.md`
+  - `docs/SEMASCRIPT_PARTIAL_SNAPSHOT_RESTORE_SELECTIVE_WORKSPACE_STATE_IMPORT_v0.1.md`
+  - `docs/SEMASCRIPT_PATTERN_DECOMPOSITION_SPEC_v0.1.md`
+  - `docs/SEMASCRIPT_PATTERN_TIME_INVARIANT_PACK_v0.1.md`
+  - `docs/SEMASCRIPT_PERSISTED_PROJECT_SESSION_FORMAT_v0.1.md`
+  - `docs/SEMASCRIPT_PORTABLE_LOCAL_OUTCOME_PACKAGE_COMMIT_PROMOTE_IMPORTED_RESOLUTION_v0.1.md`
+  - `docs/SEMASCRIPT_PORTABLE_LOCAL_OUTCOME_PACKAGE_CONFLICT_RESOLUTION_MANUAL_IMPORT_DECISIONS_v0.1.md`
+  - `docs/SEMASCRIPT_PORTABLE_LOCAL_OUTCOME_PACKAGE_DIFF_COMPARE_COMMITTED_IMPORTED_OUTCOMES_v0.1.md`
+  - `docs/SEMASCRIPT_PORTABLE_LOCAL_OUTCOME_PACKAGE_DIFF_COMPATIBILITY_CHECK_BEFORE_IMPORT_v0.1.md`
+- `tooling/semascript_parser.py`
+  - Type: file
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\tooling\semascript_parser.py`
+  - Size bytes: 5821
+- `tooling/semascript_ast.py`
+  - Type: file
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\tooling\semascript_ast.py`
+  - Size bytes: 3985
+- `tooling/semascript_validator.py`
+  - Type: file
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\tooling\semascript_validator.py`
+  - Size bytes: 6858
+- `tooling/exec_runtime.py`
+  - Type: file
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\tooling\exec_runtime.py`
+  - Size bytes: 14804
+- `tooling/inspector_server.py`
+  - Type: file
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\tooling\inspector_server.py`
+  - Size bytes: 27126
+- `tooling/inspector_service.py`
+  - Type: file
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\tooling\inspector_service.py`
+  - Size bytes: 31328
+- `tooling/state_model.py`
+  - Type: file
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\tooling\state_model.py`
+  - Size bytes: 10461
+- `tooling/session_model.py`
+  - Type: file
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\tooling\session_model.py`
+  - Size bytes: 5823
+- `tooling/project_model.py`
+  - Type: file
+  - Absolute path: `D:\SEMASCRIPT\SEMASCRIPT_current_bundle\tooling\project_model.py`
+  - Size bytes: 42478
+
+## Missing / Not Found
+
