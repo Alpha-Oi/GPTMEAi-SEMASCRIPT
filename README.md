@@ -1,4 +1,20 @@
-# GPTMEAi-SEMASCRIPT
+<div align="center">
+
+# ◈ GPTMEAi-SEMASCRIPT
+
+### Dry-run integration bridge between GPTMEAi and SEMASCRIPT
+
+**Adapter + contract layer · Event-sourced skeleton · Approval-gated**
+
+[![Tests](https://github.com/Alpha-Oi/GPTMEAi-SEMASCRIPT/actions/workflows/tests.yml/badge.svg)](https://github.com/Alpha-Oi/GPTMEAi-SEMASCRIPT/actions/workflows/tests.yml)
+![Status](https://img.shields.io/badge/status-active-22a06b)
+![License](https://img.shields.io/badge/license-proprietary-lightgrey)
+
+[Contributing](CONTRIBUTING.md) · [Conduct](CODE_OF_CONDUCT.md) · [Security](SECURITY.md) · [Notice](NOTICE)
+
+</div>
+
+---
 
 GPTMEAi-SEMASCRIPT is a standalone integration bridge between GPTMEAi and
 SEMASCRIPT.
